@@ -1,2 +1,3 @@
-puts "Nate"
-puts "is cool"
+include Tasks
+
+ShowWord ("Bruh")
