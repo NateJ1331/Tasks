@@ -1,15 +1,19 @@
 class Display
-
   def Tasks (tasks)
     system ("cls")
     for task in tasks
+      if task.GetCompleted == false
+        overdue = task.CheckOverdue
+      else
+        overdue = "Task Completed"
+      end
       puts "Task: #{task.GetName}"
       puts "Due Date: #{task.GetDate}"
       puts "Completed: #{task.GetCompleted}"
+      puts "Overdue: #{overdue}"
       puts "-----------------------------"
     end
   end
-
   def menu
     puts "           Menu              "
     puts "-----------------------------"
@@ -18,7 +22,6 @@ class Display
     puts "3.         Quit              "
     puts "-----------------------------"
   end
-
   def TaskNames (tasks)
     i = 1
     for task in tasks

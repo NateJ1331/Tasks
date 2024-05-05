@@ -2,24 +2,20 @@ require_relative "Task"
 require_relative "Display"
 tasks = []
 quit = false
-
 while quit == false do
   display = Display.new
   display.Tasks(tasks)
   display.menu
   choice = gets.chomp
-
   case choice
     when "1"
-      puts "Whats the name?"
+      puts "Whats the name of the Task?"
       name = gets.chomp
-      puts "Whats the due date?"
+      puts "Whats the due date? (MM/DD/YYY)"
       date = gets.chomp
-
       task = Task.new
       task.AddTask(name,date)
       tasks.push(task)
-
     when "2"
       puts "Which Task would you like to complete? "
       display.TaskNames(tasks)
