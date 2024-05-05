@@ -1,7 +1,6 @@
 #Gives Program.rb Accsess to the other files and classes
 require_relative "Task"
 require_relative "Display"
-require 'date'
 
 #Initilize basic variables
 tasks = []
