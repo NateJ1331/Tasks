@@ -1,6 +1,7 @@
-#Gives Program.rb Accsess to the other files
+#Gives Program.rb Accsess to the other files and classes
 require_relative "Task"
 require_relative "Display"
+require 'date'
 
 #Initilize basic variables
 tasks = []
@@ -25,7 +26,7 @@ while quit == false do
 
       #Makes sure date is in the correct format before trying to use it
       begin
-        Date.parse(date)
+        due_date = Date.strptime(date,"%m/%d/%Y")
         #Creates a new task each time the user promts this option
         task = Task.new
         task.AddTask(name,date)
@@ -52,9 +53,9 @@ while quit == false do
       puts "When would you like yo change the date to? (MM/DD/YYYY)"
       newDate = gets.chomp
 
-      #See previous note about correct date format (line 26)
+      #See previous note about correct date format (line 27)
       begin
-        Date.parse(date)
+        due_date = Date.strptime(newDate,"%m/%d/%Y")
         tasks[choice.to_i - 1].SetDate(newDate)
       rescue ArgumentError
         puts "Invalid date format. Please enter date in MM/DD/YYYY format."
