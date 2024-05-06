@@ -37,29 +37,43 @@ while quit == false do
       end
 
     when "2"
-      puts "Which Task would you like to complete? "
-      display.TaskNames(tasks)
-      input = gets.chomp
+      if tasks.empty?()
 
-      #Turns the input into an into so it can be used as an index
-      tasks[input.to_i - 1].MarkCompleted
+      puts "There are no tasks"
+      sleep (1)
+      else
+
+        puts "Which Task would you like to complete? "
+        display.TaskNames(tasks)
+        input = gets.chomp
+
+        #Turns the input into an into so it can be used as an index
+        tasks[input.to_i - 1].MarkCompleted
+      end
 
     when "3"
-      #Allows the user to change the date of the task in case its taking longer than expected
-      puts "Which Task would you like to change? "
-      display.TaskNames(tasks)
-      choice = gets.chomp
-      puts "When would you like yo change the date to? (MM/DD/YYYY)"
-      newDate = gets.chomp
+      if if tasks.empty?()
 
-      #See previous note about correct date format (line 27)
-      begin
-        due_date = Date.strptime(newDate,"%m/%d/%Y")
-        tasks[choice.to_i - 1].SetDate(newDate)
-      rescue ArgumentError
-        puts "Invalid date format. Please enter date in MM/DD/YYYY format."
-      sleep (1)
+        puts "There are no tasks"
+        sleep (1)
+      else
+        #Allows the user to change the date of the task in case its taking longer than expected
+        puts "Which Task would you like to change? "
+        display.TaskNames(tasks)
+        choice = gets.chomp
+        puts "When would you like yo change the date to? (MM/DD/YYYY)"
+        newDate = gets.chomp
+
+        #See previous note about correct date format (line 27)
+        begin
+          due_date = Date.strptime(newDate,"%m/%d/%Y")
+          tasks[choice.to_i - 1].SetDate(newDate)
+        rescue ArgumentError
+          puts "Invalid date format. Please enter date in MM/DD/YYYY format."
+        sleep (1)
+        end
       end
+    end
 
     when "4"
       #closes loop
