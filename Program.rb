@@ -52,7 +52,7 @@ while quit == false do
       end
 
     when "3"
-      if if tasks.empty?()
+      if tasks.empty?()
 
         puts "There are no tasks"
         sleep (1)
