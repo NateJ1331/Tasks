@@ -64,7 +64,7 @@ while quit == false do
         puts "When would you like yo change the date to? (MM/DD/YYYY)"
         newDate = gets.chomp
 
-        #See previous note about correct date format (line 27)
+        #See previous note about correct date format (line 26)
         begin
           due_date = Date.strptime(newDate,"%m/%d/%Y")
           tasks[choice.to_i - 1].SetDate(newDate)
