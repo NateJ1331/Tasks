@@ -37,10 +37,10 @@ while quit == false do
       end
 
     when "2"
-      if tasks.empty?()
 
-      puts "There are no tasks"
-      sleep (1)
+      if tasks.empty?()
+        puts "There are no tasks"
+        sleep (1)
       else
 
         puts "Which Task would you like to complete? "
@@ -73,7 +73,6 @@ while quit == false do
         sleep (1)
         end
       end
-    end
 
     when "4"
       #closes loop
