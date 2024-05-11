@@ -61,7 +61,7 @@ while quit == false do
         puts "Which Task would you like to change? "
         display.TaskNames(tasks)
         choice = gets.chomp
-        puts "When would you like yo change the date to? (MM/DD/YYYY)"
+        puts "When would you like you change the date to? (MM/DD/YYYY)"
         newDate = gets.chomp
 
         #See previous note about correct date format (line 26)
